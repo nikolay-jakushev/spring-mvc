@@ -1,7 +1,9 @@
 package com.yakushev.spring.mvc;
 
+import com.yakushev.spring.mvc.Model.Employee;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -16,14 +18,14 @@ public class ViewController {
     }
 
     @RequestMapping("/askDetails")
-    public String askEmployeeDetails() {
+    public String askEmployeeDetails(Model model) {
+        model.addAttribute("employee", new Employee());
         return "askEmployeeDetailsView";
     }
 
     @RequestMapping("/showDetails")
-    public String showEmployeeDetails(@RequestParam("employeeName") String empName, Model model) {
-        empName = "Mr. " + empName;
-        model.addAttribute("nameAttribute", empName);
+    public String showEmployeeDetails(@ModelAttribute("employee") Employee employee) {
+
         return "showEmployeeDetailsView";
     }
 
