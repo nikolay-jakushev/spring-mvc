@@ -25,7 +25,6 @@ public class ViewController {
 
     @RequestMapping("/showDetails")
     public String showEmployeeDetails(@ModelAttribute("employee") Employee employee) {
-
         return "showEmployeeDetailsView";
     }
 
