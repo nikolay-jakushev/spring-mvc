@@ -3,13 +3,16 @@
 <html lang="en">
 <body>
 
+<br>
+<br>
+
 <form:form action = "saveEmployee" modelAttribute="employee">
 
         Name <form:input path="name"/>
         <br><br>
         Surname <form:input path="surname"/>
         <br><br>
-        Department <form:select path="department"/>
+        Department <form:input path="department"/>
         <br><br>
         Salary <form:input path="salary"/>
         <br><br>
